@@ -1,9 +1,28 @@
 class chatbook:
+    __user_id = 0
     def __init__(self):
+        self.__name = "Default User" # Hidden attribute
+        self.id = chatbook.__user_id # way to access global Hidden variable 
+        chatbook.__user_id += 1
         self.username = ''
         self.password = ''
         self.loggedin = False
-        self.menu()
+        # self.menu()
+
+    @staticmethod
+    def get_id():
+        return chatbook.__user_id
+    
+    @staticmethod
+    def set_id(val):   # static method didn't need of self variable
+        chatbook.__user_id = val
+
+    def get_name(self):
+        return self.__name
+    
+
+    def set_name(self, value):
+        self.__name = value
 
     def menu(self):
         user_input = input("welcome to chatbook, How would you like to proceed " \
@@ -31,7 +50,7 @@ class chatbook:
         self.password = password
         print("You have successfully signed up!!!")
         print("\n")
-        self.menu()
+        # self.menu()
 
     def signin(self):
         if self.username=='' and self.password=='':
@@ -68,4 +87,4 @@ class chatbook:
         self.menu()
 
 
-obj = chatbook()
+# obj = chatbook()
