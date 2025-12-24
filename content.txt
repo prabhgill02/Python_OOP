@@ -18,3 +18,5 @@
     > encapsulation ---- > used something u don't want to share with others 
     > getter and setter
     > static method    
+
+    >Inheritence
